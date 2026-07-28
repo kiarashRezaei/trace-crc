@@ -1,0 +1,42 @@
+# Tested reproducibility environment: CPython 3.13.7.
+# Install from the repository root with:
+#   python3.13 -m venv .venv
+#   source .venv/bin/activate
+#   python -m pip install --upgrade pip
+#   python -m pip install -r requirements.txt
+#
+# The exact pins below match the environment used to execute
+# DiU/diu_conformal_all_in_one_reproducibility.ipynb.
+
+# Numerical and statistical stack
+numpy==2.4.2
+scipy==1.17.0
+pandas==3.0.2
+scikit-learn==1.8.0
+statsmodels==0.14.6
+joblib==1.5.3
+
+# Plotting and utilities
+matplotlib==3.10.8
+seaborn==0.13.2
+PyYAML==6.0.3
+tqdm==4.67.3
+
+# DiU diffusion inference
+torch==2.10.0
+diffusers==0.37.1
+safetensors==0.7.0
+
+# CSI dataset generation. These are not invoked when the provided dataset or
+# validated compact inference caches are used, but are retained for a complete
+# project environment.
+tensorflow==2.20.0
+sionna==0.8.0
+
+# Notebook runtime
+jupyter==1.1.1
+jupyterlab==4.5.4
+notebook==7.5.3
+ipython==9.10.0
+ipykernel==7.2.0
+ipywidgets==8.1.8

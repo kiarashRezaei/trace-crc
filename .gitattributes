@@ -1,0 +1,17 @@
+* text=auto eol=lf
+
+*.ipynb text
+*.json text
+*.csv text
+*.md text
+*.py text
+*.tex text
+*.yml text
+*.yaml text
+*.svg text
+
+*.npz binary
+*.pkl binary
+*.pdf binary
+*.pt binary
+

@@ -1,0 +1,105 @@
+dataset:
+  dataset_name: Final
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_28GHz_diverse_50000.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_28GHz_fast_1000.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_28GHz_slow_1000.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_28GHz_150000_v_30_120_DS_50_400.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_1000_v_60.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_1000_v_120_fast.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_1000_diverse.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_1000_v_30_slow.pt"
+  data_path: /mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_100000.pt
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_diverse.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_v_30.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_v_60.pt"
+  # data_path: "/mimer/NOBACKUP/groups/naiss2023-22-424/projects/CDL_dataset/CSI_Dataset_v_120.pt"
+  # data_path: "./CSI_Data/csi_data4.pt"
+  # data_path: "./CSI_Data/csi_diverse.pt"
+  T_in: 30
+  T_out: 10
+  batch_size: 512
+  train_snr_min: -20.0
+  train_snr_max: 20.0
+  inference_snr: 20.0
+  normalization_method: minmax  # "zscore", "minmax", "robust", "none"
+training:
+  epochs: 1000
+  LSTM_lr: 0.0001
+  diffusion_lr: 0.001
+  linformer_lr: 0.0001
+  model_ema_steps: 10
+  model_ema_decay: 0.95
+  n_samples: 36
+  aux_loss_weight: 0.0
+  consistency_loss_weight: 0.0
+  use_gradient_clipping: True
+  gradient_clip_value: 1.0
+  use_huber_loss: True
+  huber_delta: 0.016
+  # Classifier-free guidance parameters
+  cfg_drop_prob: 0.0  # Probability of dropping conditioning during training
+  cfg_guidance_scale: 1.0  # Guidance scale for inference (1.0 = no guidance, >1.0 = stronger guidance)
+  # Autoregressive improvement parameters
+  scheduled_sampling_prob: 0.2  # Probability of using model predictions during training
+  multi_step_prob: 0.1  # Probability of multi-step training
+  multi_step_weight: 0.5  # Weight for multi-step loss
+  p_self_condition: 0.5  # Probability of using self-conditioning during training
+model:
+  Diffusion:
+    model_name: Diffusion
+    LSTM_out_channels: 2
+    LSTM_hidden_channels: 128
+    prediction_type: v_prediction  # "sample", "epsilon", "v_prediction"
+    lstm_num_layers: 1
+    final_activation: relu  # "sigmoid", "tanh", "relu", None
+    LSTM_kernel_size: 3
+    TT_hidden_dim: 128
+    TT_depth: 2
+    TT_heads: 4
+    TT_mlp_ratio: 2.0
+    TT_k_frames: 8
+    timesteps: 2000
+    beta_start: 0.0001
+    beta_end: 0.02
+    beta_schedule: squaredcos_cap_v2
+    Unet_block_out_channels: [32, 64]
+    down_block_types: [DownBlock2D, AttnDownBlock2D]
+    up_block_types: [AttnUpBlock2D, UpBlock2D]
+    Unet_layers_per_block: 2
+    Unet_norm_num_groups: 1
+    sampling_steps: 100
+    ddim_eta: 0.0
+  ConvLSTM:
+    model_name: ConvLSTM
+    LSTM_hidden_channels: 128
+    lstm_num_layers: 1
+    final_activation: None  # "sigmoid", "tanh", "relu", None
+    LSTM_kernel_size: 3
+  GRU:
+    model_name: GRU
+    hidden_channels: 256
+    num_layers: 2
+    final_activation: None  # "sigmoid", "tanh", "relu", None
+  DIT:
+    model_name: DIT
+    patch_size: 2
+    hidden_size: 32
+    depth: 8
+    num_heads: 32
+    mlp_ratio: 2.0
+  FlowMatching:
+    model_name: FlowMatching
+    sigma_min: 0.01
+  MCVD:
+    model_name: MCVD
+    time_emb_dim: 256
+    base_channels: 32
+    channel_mults: [2, 4, 8]
+    norm_num_groups: 1
+    use_spatial_transformer: True
+    num_res_blocks: 2
+  Linformer:
+    model_name: Linformer
+    d_model: 512  # Model dimension for LinFormer
+    num_blocks: 6  # Number of encoder blocks
+    ff_hidden_size: 512  # Hidden size for feed-forward layers

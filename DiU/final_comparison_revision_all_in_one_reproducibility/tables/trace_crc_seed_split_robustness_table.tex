@@ -1,0 +1,21 @@
+\begin{table}[!htbp]
+\centering
+\scriptsize
+\caption{TRACE-CRC robustness across five diffusion inference seeds and ten fixed random trajectory-level 300/700 splits. Results summarize 50 separately calibrated evaluations.}
+\label{tab:trace-seed-split-robustness}
+\begin{tabular}{lccccc}
+\toprule
+Metric & Mean $\pm$ SD & Median & Min & Max \\
+\midrule
+MHC & $0.9893 \pm 0.0041$ & 0.9899 & 0.9786 & 0.9968 \\
+WHC & $0.9745 \pm 0.0102$ & 0.9771 & 0.9443 & 0.9871 \\
+TC & $0.9576 \pm 0.0113$ & 0.9593 & 0.9271 & 0.9771 \\
+AFR & $17.3948 \pm 5.2170$ & 15.6752 & 13.8859 & 42.0247 \\
+Maximum horizon AFR & $29.5149 \pm 9.0257$ & 26.6998 & 22.7393 & 72.8843 \\
+Selected lambda & $1.1820 \pm 0.1462$ & 1.2333 & 0.9000 & 1.5000 \\
+\midrule
+Formal selection rate & 1.000 & -- & -- & -- \\
+Trajectory target pass rate & 1.000 & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

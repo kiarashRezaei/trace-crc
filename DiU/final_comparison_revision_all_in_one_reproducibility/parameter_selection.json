@@ -1,0 +1,521 @@
+{
+  "test_data_used_for_tuning": false,
+  "baseline_parameter_source": "five_seed_calibration_only_all_seed_feasibility",
+  "baseline_tuning_seeds": [
+    20260724,
+    20260824,
+    20260924,
+    20261024,
+    20261124
+  ],
+  "baseline_tuning_outer_split_seed": 314159,
+  "baseline_tuning_train_size_per_seed": 210,
+  "baseline_tuning_validation_size_per_seed": 90,
+  "baseline_seed_aggregation": "seed-level metrics; no pooling across repeated trajectories",
+  "baseline_feasibility_rule": "scope-appropriate coverage target met on every inference seed",
+  "baseline_efficiency_rule": "minimum mean validation AFR among all-seed-feasible candidates",
+  "baseline_no_feasible_candidate_rule": "minimum maximum seed shortfall, then mean shortfall, then AFR",
+  "baseline_selected_validation_summary": {
+    "weighted_horizon": {
+      "objective": "pointwise",
+      "target_metric": "pointwise_coverage",
+      "all_seed_feasible": false,
+      "minimum_target_coverage": 0.8916666666666667,
+      "mean_target_coverage": 0.8976666666666666,
+      "std_target_coverage": 0.004422166387140516,
+      "maximum_seed_shortfall": 0.008333333333333304,
+      "mean_seed_shortfall": 0.0032222222222222374,
+      "mean_average_radius": 10.939745453741816,
+      "std_average_radius": 0.09014460289754309,
+      "minimum_worst_horizon_coverage": 0.8666666666666667
+    },
+    "weighted_trajectory": {
+      "objective": "trajectory",
+      "target_metric": "trajectory_coverage",
+      "all_seed_feasible": false,
+      "minimum_target_coverage": 0.8888888888888888,
+      "mean_target_coverage": 0.8955555555555555,
+      "std_target_coverage": 0.005443310539518209,
+      "maximum_seed_shortfall": 0.011111111111111183,
+      "mean_seed_shortfall": 0.004444444444444473,
+      "mean_average_radius": 19.932697588602704,
+      "std_average_radius": 0.1514500944094428,
+      "minimum_worst_horizon_coverage": 0.9
+    },
+    "enbpi_horizon": {
+      "objective": "pointwise",
+      "target_metric": "pointwise_coverage",
+      "all_seed_feasible": true,
+      "minimum_target_coverage": 0.9,
+      "mean_target_coverage": 0.9098888888888889,
+      "std_target_coverage": 0.007126718982588684,
+      "maximum_seed_shortfall": 0.0,
+      "mean_seed_shortfall": 0.0,
+      "mean_average_radius": 11.096635515646351,
+      "std_average_radius": 0.08352098182704401,
+      "minimum_worst_horizon_coverage": 0.8444444444444444
+    },
+    "enbpi_trajectory": {
+      "objective": "trajectory",
+      "target_metric": "trajectory_coverage",
+      "all_seed_feasible": true,
+      "minimum_target_coverage": 0.9,
+      "mean_target_coverage": 0.9044444444444444,
+      "std_target_coverage": 0.005443310539518154,
+      "maximum_seed_shortfall": 0.0,
+      "mean_seed_shortfall": 0.0,
+      "mean_average_radius": 20.21110708707925,
+      "std_average_radius": 0.15766658558583396,
+      "minimum_worst_horizon_coverage": 0.9
+    },
+    "aci_horizon": {
+      "objective": "pointwise",
+      "target_metric": "pointwise_coverage",
+      "all_seed_feasible": false,
+      "minimum_target_coverage": 0.8977777777777778,
+      "mean_target_coverage": 0.8995555555555554,
+      "std_target_coverage": 0.0013788526273323057,
+      "maximum_seed_shortfall": 0.0022222222222222365,
+      "mean_seed_shortfall": 0.0007777777777777884,
+      "mean_average_radius": 11.098329221612058,
+      "std_average_radius": 0.22915365177299726,
+      "minimum_worst_horizon_coverage": 0.8888888888888888
+    },
+    "aci_trajectory": {
+      "objective": "trajectory",
+      "target_metric": "trajectory_coverage",
+      "all_seed_feasible": false,
+      "minimum_target_coverage": 0.8888888888888888,
+      "mean_target_coverage": 0.8955555555555555,
+      "std_target_coverage": 0.005443310539518209,
+      "maximum_seed_shortfall": 0.011111111111111183,
+      "mean_seed_shortfall": 0.004444444444444473,
+      "mean_average_radius": 20.120294850904674,
+      "std_average_radius": 0.24016276706118045,
+      "minimum_worst_horizon_coverage": 0.9
+    },
+    "agaci_horizon": {
+      "objective": "pointwise",
+      "target_metric": "pointwise_coverage",
+      "all_seed_feasible": false,
+      "minimum_target_coverage": 0.8933333333333333,
+      "mean_target_coverage": 0.898111111111111,
+      "std_target_coverage": 0.004151453709393204,
+      "maximum_seed_shortfall": 0.00666666666666671,
+      "mean_seed_shortfall": 0.0030000000000000248,
+      "mean_average_radius": 10.878754782326421,
+      "std_average_radius": 0.10770596581790864,
+      "minimum_worst_horizon_coverage": 0.8666666666666667
+    },
+    "agaci_trajectory": {
+      "objective": "trajectory",
+      "target_metric": "trajectory_coverage",
+      "all_seed_feasible": false,
+      "minimum_target_coverage": 0.8888888888888888,
+      "mean_target_coverage": 0.8955555555555555,
+      "std_target_coverage": 0.005443310539518209,
+      "maximum_seed_shortfall": 0.011111111111111183,
+      "mean_seed_shortfall": 0.004444444444444473,
+      "mean_average_radius": 19.99367155962684,
+      "std_average_radius": 0.2319515043770379,
+      "minimum_worst_horizon_coverage": 0.8888888888888888
+    },
+    "copulacpts": {
+      "objective": "trajectory",
+      "target_metric": "trajectory_coverage",
+      "all_seed_feasible": true,
+      "minimum_target_coverage": 0.9,
+      "mean_target_coverage": 0.9222222222222222,
+      "std_target_coverage": 0.014054567378526134,
+      "maximum_seed_shortfall": 0.0,
+      "mean_seed_shortfall": 0.0,
+      "mean_average_radius": 14.497749011516571,
+      "std_average_radius": 0.28479693392517424,
+      "minimum_worst_horizon_coverage": 0.9333333333333333
+    }
+  },
+  "baseline_tuning_selected": {
+    "weighted_horizon_beta": 0.02,
+    "weighted_trajectory_beta": 0.02,
+    "enbpi_horizon": {
+      "B": 50,
+      "window": null,
+      "center_method": "mean"
+    },
+    "enbpi_trajectory": {
+      "B": 50,
+      "window": 100,
+      "center_method": "mean"
+    },
+    "aci_horizon_gamma": 0.05,
+    "aci_trajectory_gamma": 0.02,
+    "agaci_horizon": {
+      "gammas": [
+        0.0,
+        0.005,
+        0.01,
+        0.02,
+        0.03,
+        0.05
+      ],
+      "eta": 0.05
+    },
+    "agaci_trajectory": {
+      "gammas": [
+        0.0,
+        0.005,
+        0.01,
+        0.02,
+        0.03,
+        0.05
+      ],
+      "eta": 0.2
+    },
+    "copulacpts": {
+      "split": 0.5,
+      "epochs": 1200
+    }
+  },
+  "baseline_frozen_for_evaluation": {
+    "weighted_horizon_beta": 0.02,
+    "weighted_trajectory_beta": 0.02,
+    "enbpi_horizon": {
+      "B": 50,
+      "window": null,
+      "center_method": "mean"
+    },
+    "enbpi_trajectory": {
+      "B": 50,
+      "window": 100,
+      "center_method": "mean"
+    },
+    "aci_horizon_gamma": 0.05,
+    "aci_trajectory_gamma": 0.02,
+    "agaci_horizon": {
+      "gammas": [
+        0.0,
+        0.005,
+        0.01,
+        0.02,
+        0.03,
+        0.05
+      ],
+      "eta": 0.05
+    },
+    "agaci_trajectory": {
+      "gammas": [
+        0.0,
+        0.005,
+        0.01,
+        0.02,
+        0.03,
+        0.05
+      ],
+      "eta": 0.2
+    },
+    "copulacpts": {
+      "split": 0.5,
+      "epochs": 1200
+    }
+  },
+  "previous_to_five_seed_parameter_changes": {
+    "aci_horizon_gamma": {
+      "previous": 0.02,
+      "five_seed_selected": 0.05
+    },
+    "aci_trajectory_gamma": {
+      "previous": 0.05,
+      "five_seed_selected": 0.02
+    },
+    "agaci_horizon": {
+      "previous": {
+        "gammas": [
+          0.0,
+          0.005,
+          0.01,
+          0.02,
+          0.03,
+          0.05
+        ],
+        "eta": 0.5
+      },
+      "five_seed_selected": {
+        "gammas": [
+          0.0,
+          0.005,
+          0.01,
+          0.02,
+          0.03,
+          0.05
+        ],
+        "eta": 0.05
+      }
+    },
+    "agaci_trajectory": {
+      "previous": {
+        "gammas": [
+          0.0,
+          0.005,
+          0.01,
+          0.02,
+          0.03,
+          0.05
+        ],
+        "eta": 0.5
+      },
+      "five_seed_selected": {
+        "gammas": [
+          0.0,
+          0.005,
+          0.01,
+          0.02,
+          0.03,
+          0.05
+        ],
+        "eta": 0.2
+      }
+    },
+    "copulacpts": {
+      "previous": {
+        "split": 0.6,
+        "epochs": 1200
+      },
+      "five_seed_selected": {
+        "split": 0.5,
+        "epochs": 1200
+      }
+    },
+    "weighted_horizon_beta": {
+      "previous": 0.01,
+      "five_seed_selected": 0.02
+    },
+    "weighted_trajectory_beta": {
+      "previous": 0.05,
+      "five_seed_selected": 0.02
+    }
+  },
+  "trace_parameter_selection_changed": false,
+  "trace_tuning_selected": {
+    "profile_fraction": 0.1,
+    "cp_fraction_within_rest": 0.15,
+    "num_groups": 2,
+    "smooth_window": 3,
+    "floor_ratio": 0.15,
+    "ridge_alpha": 1.0,
+    "search_selected_lambda": 1.2333333333333334,
+    "certified_lambda_grid": [
+      1.2333333333333334,
+      1.3
+    ]
+  },
+  "trace_frozen_for_evaluation": {
+    "profile_fraction": 0.1,
+    "cp_fraction_within_rest": 0.15,
+    "num_groups": 2,
+    "smooth_window": 3,
+    "floor_ratio": 0.15,
+    "ridge_alpha": 1.0,
+    "lambda_grid_initial": [
+      0.7,
+      0.7666666666666666,
+      0.8333333333333333,
+      0.9,
+      0.9666666666666667,
+      1.0333333333333332,
+      1.1,
+      1.1666666666666667,
+      1.2333333333333334,
+      1.3
+    ],
+    "lambda_grid_extension": [
+      1.4,
+      1.5,
+      1.6,
+      1.7000000000000002,
+      1.8000000000000003,
+      1.9000000000000004,
+      2.0000000000000004,
+      2.1000000000000005,
+      2.2000000000000006,
+      2.3000000000000007,
+      2.400000000000001,
+      2.500000000000001,
+      2.600000000000001,
+      2.700000000000001,
+      2.800000000000001,
+      2.9000000000000012,
+      3.0000000000000013
+    ],
+    "lambda_grid_master": [
+      0.7,
+      0.7666666666666666,
+      0.8333333333333333,
+      0.9,
+      0.9666666666666667,
+      1.0333333333333332,
+      1.1,
+      1.1666666666666667,
+      1.2333333333333334,
+      1.3,
+      1.4,
+      1.5,
+      1.6,
+      1.7000000000000002,
+      1.8000000000000003,
+      1.9000000000000004,
+      2.0000000000000004,
+      2.1000000000000005,
+      2.2000000000000006,
+      2.3000000000000007,
+      2.400000000000001,
+      2.500000000000001,
+      2.600000000000001,
+      2.700000000000001,
+      2.800000000000001,
+      2.9000000000000012,
+      3.0000000000000013
+    ],
+    "lambda_max_cap": 3.0,
+    "lambda_expand_step": 0.1,
+    "multiple_testing_method": "holm_stepdown_hb",
+    "empirical_fallback_allowed": false
+  },
+  "trace_tuning_to_frozen_differences": {},
+  "ablation_frozen_parameters": {
+    "Global-CRC": {
+      "structural_hyperparameters": {},
+      "lambda_family": [
+        0.7,
+        0.7666666666666666,
+        0.8333333333333333,
+        0.9,
+        0.9666666666666667,
+        1.0333333333333332,
+        1.1,
+        1.1666666666666667,
+        1.2333333333333334,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7000000000000002,
+        1.8000000000000003,
+        1.9000000000000004,
+        2.0000000000000004,
+        2.1000000000000005,
+        2.2000000000000006,
+        2.3000000000000007,
+        2.400000000000001,
+        2.500000000000001,
+        2.600000000000001,
+        2.700000000000001,
+        2.800000000000001,
+        2.9000000000000012,
+        3.0000000000000013
+      ]
+    },
+    "Horizon-Profile CRC": {
+      "smooth_window": 3,
+      "floor_ratio": 0.15,
+      "lambda_family": [
+        0.7,
+        0.7666666666666666,
+        0.8333333333333333,
+        0.9,
+        0.9666666666666667,
+        1.0333333333333332,
+        1.1,
+        1.1666666666666667,
+        1.2333333333333334,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7000000000000002,
+        1.8000000000000003,
+        1.9000000000000004,
+        2.0000000000000004,
+        2.1000000000000005,
+        2.2000000000000006,
+        2.3000000000000007,
+        2.400000000000001,
+        2.500000000000001,
+        2.600000000000001,
+        2.700000000000001,
+        2.800000000000001,
+        2.9000000000000012,
+        3.0000000000000013
+      ]
+    },
+    "Trajectory-Stratified CRC": {
+      "num_groups": 2,
+      "ridge_alpha": 1.0,
+      "lambda_family": [
+        0.7,
+        0.7666666666666666,
+        0.8333333333333333,
+        0.9,
+        0.9666666666666667,
+        1.0333333333333332,
+        1.1,
+        1.1666666666666667,
+        1.2333333333333334,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7000000000000002,
+        1.8000000000000003,
+        1.9000000000000004,
+        2.0000000000000004,
+        2.1000000000000005,
+        2.2000000000000006,
+        2.3000000000000007,
+        2.400000000000001,
+        2.500000000000001,
+        2.600000000000001,
+        2.700000000000001,
+        2.800000000000001,
+        2.9000000000000012,
+        3.0000000000000013
+      ]
+    },
+    "TRACE-CRC": {
+      "profile_fraction": 0.1,
+      "cp_fraction_within_rest": 0.15,
+      "num_groups": 2,
+      "smooth_window": 3,
+      "floor_ratio": 0.15,
+      "ridge_alpha": 1.0,
+      "lambda_family": [
+        0.7,
+        0.7666666666666666,
+        0.8333333333333333,
+        0.9,
+        0.9666666666666667,
+        1.0333333333333332,
+        1.1,
+        1.1666666666666667,
+        1.2333333333333334,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7000000000000002,
+        1.8000000000000003,
+        1.9000000000000004,
+        2.0000000000000004,
+        2.1000000000000005,
+        2.2000000000000006,
+        2.3000000000000007,
+        2.400000000000001,
+        2.500000000000001,
+        2.600000000000001,
+        2.700000000000001,
+        2.800000000000001,
+        2.9000000000000012,
+        3.0000000000000013
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+\begin{table}[!htbp]
+\centering
+\scriptsize
+\caption{Robustness of all paper-reported methods across diffusion inference seeds under one fixed random trajectory-level 300/700 split. Values are mean $\pm$ standard deviation across seeds.}
+\label{tab:all-method-seed-robustness}
+\begin{tabular}{llcccc}
+\toprule
+Category & Method & MHC & WHC & TC & AFR \\
+\midrule
+Standard split-conformal & Global Residual & $0.880 \pm 0.003$ & $0.658 \pm 0.006$ & $0.642 \pm 0.006$ & $12.98 \pm 0.13$ \\
+ & Horizon-wise & $0.872 \pm 0.002$ & $0.855 \pm 0.006$ & $0.710 \pm 0.009$ & $10.73 \pm 0.06$ \\
+ & Max-score Split & $0.973 \pm 0.001$ & $0.901 \pm 0.005$ & $0.882 \pm 0.005$ & $19.52 \pm 0.26$ \\
+ & Residual Quantile & $0.965 \pm 0.002$ & $0.939 \pm 0.003$ & $0.903 \pm 0.007$ & $14.30 \pm 0.21$ \\
+Time-series adaptive & EW-Horizon & $0.893 \pm 0.001$ & $0.885 \pm 0.001$ & $0.735 \pm 0.005$ & $11.40 \pm 0.03$ \\
+ & EW-Trajectory & $0.976 \pm 0.001$ & $0.908 \pm 0.001$ & $0.891 \pm 0.002$ & $20.25 \pm 0.11$ \\
+ & EnbPI-Horizon & $0.918 \pm 0.003$ & $0.884 \pm 0.003$ & $0.790 \pm 0.010$ & $12.13 \pm 0.18$ \\
+ & EnbPI-Trajectory & $0.984 \pm 0.001$ & $0.937 \pm 0.007$ & $0.919 \pm 0.008$ & $21.80 \pm 0.24$ \\
+ & ACI-Horizon & $0.898 \pm 0.000$ & $0.896 \pm 0.001$ & $0.733 \pm 0.005$ & $11.74 \pm 0.03$ \\
+ & ACI-Trajectory & $0.977 \pm 0.001$ & $0.912 \pm 0.001$ & $0.898 \pm 0.001$ & $20.46 \pm 0.17$ \\
+ & AgACI-Horizon & $0.896 \pm 0.001$ & $0.891 \pm 0.001$ & $0.744 \pm 0.006$ & $11.49 \pm 0.06$ \\
+ & AgACI-Trajectory & $0.977 \pm 0.001$ & $0.911 \pm 0.003$ & $0.895 \pm 0.003$ & $20.34 \pm 0.15$ \\
+Structured multi-step & Bonferroni-CRC & $0.993 \pm 0.001$ & $0.985 \pm 0.003$ & $0.968 \pm 0.004$ & $20.00 \pm 0.29$ \\
+ & Sidak-CRC & $0.993 \pm 0.001$ & $0.985 \pm 0.003$ & $0.968 \pm 0.004$ & $20.00 \pm 0.29$ \\
+ & CopulaCPTS & $0.969 \pm 0.004$ & $0.945 \pm 0.004$ & $0.892 \pm 0.012$ & $14.87 \pm 0.29$ \\
+Risk control / ablation & Global-CRC & $0.992 \pm 0.001$ & $0.967 \pm 0.005$ & $0.957 \pm 0.007$ & $24.37 \pm 0.54$ \\
+ & Horizon-Profile CRC & $0.984 \pm 0.002$ & $0.970 \pm 0.004$ & $0.945 \pm 0.004$ & $15.78 \pm 0.38$ \\
+ & Trajectory-Stratified CRC & $0.989 \pm 0.002$ & $0.954 \pm 0.003$ & $0.950 \pm 0.005$ & $22.60 \pm 0.79$ \\
+ & TRACE-CRC & $0.978 \pm 0.004$ & $0.962 \pm 0.006$ & $0.933 \pm 0.011$ & $13.64 \pm 0.41$ \\
+\bottomrule
+\end{tabular}
+\end{table}

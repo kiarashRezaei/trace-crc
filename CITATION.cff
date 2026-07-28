@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use TRACE-CRC, please cite the COPA 2026 paper."
+title: "TRACE-CRC: Trajectory-Adaptive Conformal Risk Control for Multi-Step Channel State Information Prediction"
+type: software
+version: 1.0.0
+date-released: 2026-07-28
+authors:
+  - family-names: Rezaei
+    given-names: Kiarash
+    email: kiarashr@chalmers.se
+    affiliation: Chalmers University of Technology
+  - family-names: Sattari
+    given-names: Mehdi
+    email: mehdi.sattari@chalmers.se
+    affiliation: Chalmers University of Technology
+  - family-names: Aliakbari
+    given-names: Javad
+    email: javada@chalmers.se
+    affiliation: Chalmers University of Technology
+  - family-names: Svensson
+    given-names: Tommy
+    email: tommy.svensson@chalmers.se
+    affiliation: Chalmers University of Technology
+  - family-names: Monti
+    given-names: Paolo
+    email: mpaolo@chalmers.se
+    affiliation: Chalmers University of Technology
+  - family-names: Natalino
+    given-names: Carlos
+    email: carlos.natalino@chalmers.se
+    affiliation: Chalmers University of Technology
+repository-code: "https://github.com/kiarashRezaei/trace-crc"
+license: MIT
+keywords:
+  - conformal prediction
+  - conformal risk control
+  - channel state information
+  - uncertainty quantification
+  - multi-step prediction
+preferred-citation:
+  type: conference-paper
+  title: "TRACE-CRC: Trajectory-Adaptive Conformal Risk Control for Multi-Step Channel State Information Prediction"
+  authors:
+    - family-names: Rezaei
+      given-names: Kiarash
+    - family-names: Sattari
+      given-names: Mehdi
+    - family-names: Aliakbari
+      given-names: Javad
+    - family-names: Svensson
+      given-names: Tommy
+    - family-names: Monti
+      given-names: Paolo
+    - family-names: Natalino
+      given-names: Carlos
+  collection-title: "Conformal and Probabilistic Prediction with Applications (COPA 2026)"
+  year: 2026

@@ -1,0 +1,47 @@
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.idea/
+.vscode/
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.swp
+*~
+
+# Generated scientific caches not included in the reference artifact
+conformal/core/.cache/
+
+# Large private inputs. Keep the placement notes tracked.
+data/csi/*
+!data/csi/README.md
+DiU/models/*
+!DiU/models/README.md
+
+# Locally regenerated diffusion outputs outside the canonical artifact
+DiU/generated_data/
+DiU/images/
+DiU/outputs/
+
