@@ -1,0 +1,255 @@
+% Auto-generated seed-robust coverage and average Frobenius radius figure
+% Requires \usepackage{pgfplots} and \usepgfplotslibrary{fillbetween}
+
+\definecolor{cBonferroniHorizonConformal}{RGB}{128,128,128}
+\definecolor{cSidakHorizonConformal}{RGB}{192,192,192}
+\definecolor{cCopulacpts}{RGB}{0,128,128}
+\definecolor{cTraceCrc}{RGB}{139,0,0}
+
+\centering
+\pgfplotslegendfromname{CombinedLegend3}
+\vspace{0.3cm}
+
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=\linewidth,
+height=0.72\linewidth,
+xlabel={Prediction step},
+xmin=1, xmax=20,
+xtick={1,5,10,15,20},
+grid=both,
+grid style={line width=.1pt, draw=gray!20},
+major grid style={line width=.2pt,draw=gray!35},
+tick label style={font=\scriptsize},
+label style={font=\small},
+legend to name=CombinedLegend3,
+legend columns=2,
+legend style={
+    font=\scriptsize,
+    draw=none,
+    fill=none,
+    /tikz/every even column/.append style={column sep=0.35cm}
+},
+ylabel={$\mathrm{HC}_j$},
+ymin=0.65,
+ymax=1.01
+]
+
+\addplot[black, dashed, line width=0.6pt, forget plot] coordinates {(1,0.90) (20,0.90)};
+\node[anchor=west, font=\scriptsize] at (axis cs:1.3,0.905) {$1-\alpha=0.90$};
+
+\addplot[name path=cBonferroniHorizonConformalCoverageUpper, draw=none, forget plot] coordinates {
+(1,0.996696) (2,0.994650) (3,0.995737) (4,0.995696)
+(5,1.000000) (6,0.995452) (7,0.997529) (8,0.998081)
+(9,0.997429) (10,0.997271) (11,0.996571) (12,0.996000)
+(13,0.994809) (14,0.992000) (15,0.990181) (16,0.990592)
+(17,0.992084) (18,0.992571) (19,1.000000) (20,0.991355)
+};
+\addplot[name path=cBonferroniHorizonConformalCoverageLower, draw=none, forget plot] coordinates {
+(1,0.986733) (2,0.989350) (3,0.984835) (4,0.986589)
+(5,1.000000) (6,0.988548) (7,0.989328) (8,0.989919)
+(9,0.990571) (10,0.995872) (11,0.995429) (12,0.994857)
+(13,0.991477) (14,0.987429) (15,0.986391) (16,0.986551)
+(17,0.986201) (18,0.988000) (19,1.000000) (20,0.989217)
+};
+\addplot[fill=cBonferroniHorizonConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cBonferroniHorizonConformalCoverageUpper and cBonferroniHorizonConformalCoverageLower];
+\addplot+[cBonferroniHorizonConformal, semithick, solid, mark=*, mark repeat=4, mark phase=1, mark options={scale=0.60}] coordinates {
+(1,0.991714) (2,0.992000) (3,0.990286) (4,0.991143)
+(5,1.000000) (6,0.992000) (7,0.993429) (8,0.994000)
+(9,0.994000) (10,0.996571) (11,0.996000) (12,0.995429)
+(13,0.993143) (14,0.989714) (15,0.988286) (16,0.988571)
+(17,0.989143) (18,0.990286) (19,1.000000) (20,0.990286)
+};
+\addlegendentry{Bonferroni-CRC, TC=0.968}
+
+\addplot[name path=cSidakHorizonConformalCoverageUpper, draw=none, forget plot] coordinates {
+(1,0.996696) (2,0.994650) (3,0.995737) (4,0.995696)
+(5,1.000000) (6,0.995452) (7,0.997529) (8,0.998081)
+(9,0.997429) (10,0.997271) (11,0.996571) (12,0.996000)
+(13,0.994809) (14,0.992000) (15,0.990181) (16,0.990592)
+(17,0.992084) (18,0.992571) (19,1.000000) (20,0.991355)
+};
+\addplot[name path=cSidakHorizonConformalCoverageLower, draw=none, forget plot] coordinates {
+(1,0.986733) (2,0.989350) (3,0.984835) (4,0.986589)
+(5,1.000000) (6,0.988548) (7,0.989328) (8,0.989919)
+(9,0.990571) (10,0.995872) (11,0.995429) (12,0.994857)
+(13,0.991477) (14,0.987429) (15,0.986391) (16,0.986551)
+(17,0.986201) (18,0.988000) (19,1.000000) (20,0.989217)
+};
+\addplot[fill=cSidakHorizonConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cSidakHorizonConformalCoverageUpper and cSidakHorizonConformalCoverageLower];
+\addplot+[cSidakHorizonConformal, semithick, solid, mark=*, mark repeat=4, mark phase=2, mark options={scale=0.60}] coordinates {
+(1,0.991714) (2,0.992000) (3,0.990286) (4,0.991143)
+(5,1.000000) (6,0.992000) (7,0.993429) (8,0.994000)
+(9,0.994000) (10,0.996571) (11,0.996000) (12,0.995429)
+(13,0.993143) (14,0.989714) (15,0.988286) (16,0.988571)
+(17,0.989143) (18,0.990286) (19,1.000000) (20,0.990286)
+};
+\addlegendentry{Sidak-CRC, TC=0.968}
+
+\addplot[name path=cCopulacptsCoverageUpper, draw=none, forget plot] coordinates {
+(1,0.978546) (2,0.990843) (3,0.982104) (4,0.989124)
+(5,0.989982) (6,0.989856) (7,0.983801) (8,0.986306)
+(9,0.988126) (10,0.967540) (11,0.960736) (12,0.955775)
+(13,0.952804) (14,0.975029) (15,0.957395) (16,0.967802)
+(17,0.966660) (18,0.979542) (19,0.994885) (20,0.985511)
+};
+\addplot[name path=cCopulacptsCoverageLower, draw=none, forget plot] coordinates {
+(1,0.956311) (2,0.961728) (3,0.973325) (4,0.972019)
+(5,0.980875) (6,0.961572) (7,0.960199) (8,0.962265)
+(9,0.967874) (10,0.956460) (11,0.954121) (12,0.939653)
+(13,0.942053) (14,0.941543) (15,0.950033) (16,0.955626)
+(17,0.957340) (18,0.967887) (19,0.991972) (20,0.971631)
+};
+\addplot[fill=cCopulacpts, fill opacity=0.10, draw=none, forget plot] fill between[of=cCopulacptsCoverageUpper and cCopulacptsCoverageLower];
+\addplot+[cCopulacpts, semithick, solid, mark=*, mark repeat=4, mark phase=3, mark options={scale=0.60}] coordinates {
+(1,0.967429) (2,0.976286) (3,0.977714) (4,0.980571)
+(5,0.985429) (6,0.975714) (7,0.972000) (8,0.974286)
+(9,0.978000) (10,0.962000) (11,0.957429) (12,0.947714)
+(13,0.947429) (14,0.958286) (15,0.953714) (16,0.961714)
+(17,0.962000) (18,0.973714) (19,0.993429) (20,0.978571)
+};
+\addlegendentry{CopulaCPTS, TC=0.892}
+
+\addplot[name path=cTraceCrcCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,0.995248) (3,0.993903) (4,0.991199)
+(5,0.976996) (6,0.987879) (7,0.988980) (8,0.990286)
+(9,0.987025) (10,0.983725) (11,0.982832) (12,0.979980)
+(13,0.978119) (14,0.975022) (15,0.973833) (16,0.971074)
+(17,0.971311) (18,0.973661) (19,0.970899) (20,0.975513)
+};
+\addplot[name path=cTraceCrcCoverageLower, draw=none, forget plot] coordinates {
+(1,0.998729) (2,0.990467) (3,0.987239) (4,0.985372)
+(5,0.971575) (6,0.981264) (7,0.979591) (8,0.976571)
+(9,0.974689) (10,0.976275) (11,0.973168) (12,0.972020)
+(13,0.970452) (14,0.968407) (15,0.959310) (16,0.955783)
+(17,0.958975) (18,0.962910) (19,0.961101) (20,0.966772)
+};
+\addplot[fill=cTraceCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cTraceCrcCoverageUpper and cTraceCrcCoverageLower];
+\addplot+[cTraceCrc, very thick, solid, mark=diamond*, mark repeat=4, mark phase=3, mark options={scale=0.65}] coordinates {
+(1,0.999429) (2,0.992857) (3,0.990571) (4,0.988286)
+(5,0.974286) (6,0.984571) (7,0.984286) (8,0.983429)
+(9,0.980857) (10,0.980000) (11,0.978000) (12,0.976000)
+(13,0.974286) (14,0.971714) (15,0.966571) (16,0.963429)
+(17,0.965143) (18,0.968286) (19,0.966000) (20,0.971143)
+};
+\addlegendentry{TRACE-CRC, TC=0.933}
+
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=\linewidth,
+height=0.72\linewidth,
+xlabel={Prediction step},
+xmin=1, xmax=20,
+xtick={1,5,10,15,20},
+grid=both,
+grid style={line width=.1pt, draw=gray!20},
+major grid style={line width=.2pt,draw=gray!35},
+tick label style={font=\scriptsize},
+label style={font=\small},
+ylabel={$\mathrm{AFR}_j$},
+ymin=0
+]
+
+\addplot[name path=cBonferroniHorizonConformalRadiusUpper, draw=none, forget plot] coordinates {
+(1,1.960248) (2,3.126500) (3,4.757470) (4,6.825636)
+(5,38.693385) (6,11.309163) (7,13.824833) (8,15.860335)
+(9,17.629438) (10,19.322760) (11,21.059697) (12,22.531779)
+(13,23.909937) (14,24.444004) (15,25.078258) (16,26.295737)
+(17,27.476001) (18,28.291721) (19,49.394969) (20,29.040068)
+};
+\addplot[name path=cBonferroniHorizonConformalRadiusLower, draw=none, forget plot] coordinates {
+(1,1.755170) (2,2.890601) (3,4.317775) (4,6.077593)
+(5,38.195229) (6,10.046957) (7,12.144724) (8,13.997508)
+(9,15.987000) (10,18.212963) (11,20.590286) (12,22.240882)
+(13,22.979612) (14,22.866134) (15,23.154332) (16,24.749899)
+(17,25.792331) (18,26.157915) (19,49.245215) (20,27.617510)
+};
+\addplot[fill=cBonferroniHorizonConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cBonferroniHorizonConformalRadiusUpper and cBonferroniHorizonConformalRadiusLower];
+\addplot+[cBonferroniHorizonConformal, semithick, solid, mark=*, mark repeat=4, mark phase=1, mark options={scale=0.60}] coordinates {
+(1,1.857709) (2,3.008550) (3,4.537623) (4,6.451614)
+(5,38.444307) (6,10.678060) (7,12.984778) (8,14.928922)
+(9,16.808219) (10,18.767862) (11,20.824991) (12,22.386331)
+(13,23.444775) (14,23.655069) (15,24.116295) (16,25.522818)
+(17,26.634166) (18,27.224818) (19,49.320092) (20,28.328789)
+};
+
+\addplot[name path=cSidakHorizonConformalRadiusUpper, draw=none, forget plot] coordinates {
+(1,1.960248) (2,3.126500) (3,4.757470) (4,6.825636)
+(5,38.693385) (6,11.309163) (7,13.824833) (8,15.860335)
+(9,17.629438) (10,19.322760) (11,21.059697) (12,22.531779)
+(13,23.909937) (14,24.444004) (15,25.078258) (16,26.295737)
+(17,27.476001) (18,28.291721) (19,49.394969) (20,29.040068)
+};
+\addplot[name path=cSidakHorizonConformalRadiusLower, draw=none, forget plot] coordinates {
+(1,1.755170) (2,2.890601) (3,4.317775) (4,6.077593)
+(5,38.195229) (6,10.046957) (7,12.144724) (8,13.997508)
+(9,15.987000) (10,18.212963) (11,20.590286) (12,22.240882)
+(13,22.979612) (14,22.866134) (15,23.154332) (16,24.749899)
+(17,25.792331) (18,26.157915) (19,49.245215) (20,27.617510)
+};
+\addplot[fill=cSidakHorizonConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cSidakHorizonConformalRadiusUpper and cSidakHorizonConformalRadiusLower];
+\addplot+[cSidakHorizonConformal, semithick, solid, mark=*, mark repeat=4, mark phase=2, mark options={scale=0.60}] coordinates {
+(1,1.857709) (2,3.008550) (3,4.537623) (4,6.451614)
+(5,38.444307) (6,10.678060) (7,12.984778) (8,14.928922)
+(9,16.808219) (10,18.767862) (11,20.824991) (12,22.386331)
+(13,23.444775) (14,23.655069) (15,24.116295) (16,25.522818)
+(17,26.634166) (18,27.224818) (19,49.320092) (20,28.328789)
+};
+
+\addplot[name path=cCopulacptsRadiusUpper, draw=none, forget plot] coordinates {
+(1,1.701951) (2,2.922505) (3,4.019207) (4,6.003165)
+(5,14.190227) (6,9.888120) (7,11.428058) (8,13.442639)
+(9,15.780397) (10,14.491759) (11,15.510658) (12,16.286510)
+(13,17.318608) (14,21.351796) (15,19.702223) (16,21.428567)
+(17,22.234449) (18,24.363336) (19,33.896962) (20,26.669832)
+};
+\addplot[name path=cCopulacptsRadiusLower, draw=none, forget plot] coordinates {
+(1,1.568528) (2,2.454635) (3,3.935838) (4,5.471490)
+(5,8.205275) (6,8.589421) (7,10.009078) (8,11.510569)
+(9,13.124547) (10,13.956395) (11,15.094399) (12,15.286898)
+(13,16.825000) (14,17.105456) (15,18.961782) (16,20.448058)
+(17,21.332467) (18,23.482614) (19,29.899622) (20,24.869876)
+};
+\addplot[fill=cCopulacpts, fill opacity=0.10, draw=none, forget plot] fill between[of=cCopulacptsRadiusUpper and cCopulacptsRadiusLower];
+\addplot+[cCopulacpts, semithick, solid, mark=*, mark repeat=4, mark phase=3, mark options={scale=0.60}] coordinates {
+(1,1.635240) (2,2.688570) (3,3.977523) (4,5.737327)
+(5,11.197751) (6,9.238770) (7,10.718568) (8,12.476604)
+(9,14.452472) (10,14.224077) (11,15.302529) (12,15.786704)
+(13,17.071804) (14,19.228626) (15,19.332003) (16,20.938313)
+(17,21.783458) (18,23.922975) (19,31.898292) (20,25.769854)
+};
+
+\addplot[name path=cTraceCrcRadiusUpper, draw=none, forget plot] coordinates {
+(1,2.481761) (2,3.110148) (3,4.505856) (4,6.130524)
+(5,7.727192) (6,9.334711) (7,10.793400) (8,12.352973)
+(9,13.671047) (10,14.848521) (11,15.903101) (12,16.814529)
+(13,17.705980) (14,18.543751) (15,19.233458) (16,20.009596)
+(17,20.915324) (18,21.860037) (19,22.797146) (20,23.415319)
+};
+\addplot[name path=cTraceCrcRadiusLower, draw=none, forget plot] coordinates {
+(1,2.282129) (2,2.874806) (3,4.152400) (4,5.574821)
+(5,7.030400) (6,8.495213) (7,9.884819) (8,11.324786)
+(9,12.655474) (10,13.844783) (11,14.797764) (12,15.831193)
+(13,16.856437) (14,17.684597) (15,18.236272) (16,18.653350)
+(17,19.385697) (18,20.564173) (19,21.505627) (20,21.780265)
+};
+\addplot[fill=cTraceCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cTraceCrcRadiusUpper and cTraceCrcRadiusLower];
+\addplot+[cTraceCrc, very thick, solid, mark=diamond*, mark repeat=4, mark phase=3, mark options={scale=0.65}] coordinates {
+(1,2.381945) (2,2.992477) (3,4.329128) (4,5.852672)
+(5,7.378796) (6,8.914962) (7,10.339109) (8,11.838880)
+(9,13.163260) (10,14.346652) (11,15.350433) (12,16.322861)
+(13,17.281208) (14,18.114174) (15,18.734865) (16,19.331473)
+(17,20.150510) (18,21.212105) (19,22.151386) (20,22.597792)
+};
+
+\end{axis}
+\end{tikzpicture}
+\end{minipage}

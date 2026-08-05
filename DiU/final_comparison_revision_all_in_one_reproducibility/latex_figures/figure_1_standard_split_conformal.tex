@@ -1,0 +1,303 @@
+% Auto-generated seed-robust coverage and average Frobenius radius figure
+% Requires \usepackage{pgfplots} and \usepgfplotslibrary{fillbetween}
+
+\definecolor{cGlobalResidualConformal}{RGB}{31,119,180}
+\definecolor{cHorizonWiseConformal}{RGB}{255,127,14}
+\definecolor{cMaxScoreSplitConformal}{RGB}{44,160,44}
+\definecolor{cResidualQuantileConformal}{RGB}{214,39,40}
+\definecolor{cTraceCrc}{RGB}{139,0,0}
+
+\centering
+\pgfplotslegendfromname{CombinedLegend}
+\vspace{0.3cm}
+
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=\linewidth,
+height=0.72\linewidth,
+xlabel={Prediction step},
+xmin=1, xmax=20,
+xtick={1,5,10,15,20},
+grid=both,
+grid style={line width=.1pt, draw=gray!20},
+major grid style={line width=.2pt,draw=gray!35},
+tick label style={font=\scriptsize},
+label style={font=\small},
+legend to name=CombinedLegend,
+legend columns=3,
+legend style={
+    font=\scriptsize,
+    draw=none,
+    fill=none,
+    /tikz/every even column/.append style={column sep=0.35cm}
+},
+ylabel={$\mathrm{HC}_j$},
+ymin=0.65,
+ymax=1.01
+]
+
+\addplot[black, dashed, line width=0.6pt, forget plot] coordinates {(1,0.90) (20,0.90)};
+\node[anchor=west, font=\scriptsize] at (axis cs:1.3,0.905) {$1-\alpha=0.90$};
+
+\addplot[name path=cGlobalResidualConformalCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.990000) (6,0.995714) (7,0.996618) (8,0.984467)
+(9,0.965493) (10,0.945349) (11,0.909085) (12,0.877322)
+(13,0.844275) (14,0.820988) (15,0.797325) (16,0.769662)
+(17,0.738560) (18,0.711570) (19,0.677872) (20,0.664141)
+};
+\addplot[name path=cGlobalResidualConformalCoverageLower, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.990000) (6,0.995714) (7,0.994811) (8,0.980676)
+(9,0.959079) (10,0.935223) (11,0.903486) (12,0.868963)
+(13,0.829440) (14,0.805297) (15,0.776961) (16,0.744623)
+(17,0.724869) (18,0.699859) (19,0.668413) (20,0.651287)
+};
+\addplot[fill=cGlobalResidualConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cGlobalResidualConformalCoverageUpper and cGlobalResidualConformalCoverageLower];
+\addplot+[cGlobalResidualConformal, semithick, solid, mark=*, mark repeat=4, mark phase=1, mark options={scale=0.60}] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.990000) (6,0.995714) (7,0.995714) (8,0.982571)
+(9,0.962286) (10,0.940286) (11,0.906286) (12,0.873143)
+(13,0.836857) (14,0.813143) (15,0.787143) (16,0.757143)
+(17,0.731714) (18,0.705714) (19,0.673143) (20,0.657714)
+};
+\addlegendentry{Global Residual, TC=0.642}
+
+\addplot[name path=cHorizonWiseConformalCoverageUpper, draw=none, forget plot] coordinates {
+(1,0.877733) (2,0.887600) (3,0.898241) (4,0.889596)
+(5,0.879852) (6,0.874267) (7,0.882093) (8,0.876935)
+(9,0.879765) (10,0.869592) (11,0.867295) (12,0.870861)
+(13,0.876323) (14,0.871594) (15,0.874177) (16,0.875680)
+(17,0.877132) (18,0.879968) (19,0.886325) (20,0.903265)
+};
+\addplot[name path=cHorizonWiseConformalCoverageLower, draw=none, forget plot] coordinates {
+(1,0.855410) (2,0.876971) (3,0.878331) (4,0.877261)
+(5,0.875576) (6,0.861162) (7,0.868765) (8,0.864208)
+(9,0.863663) (10,0.854408) (11,0.852133) (12,0.851996)
+(13,0.854534) (14,0.858120) (15,0.865251) (16,0.859177)
+(17,0.862297) (18,0.862318) (19,0.873675) (20,0.886449)
+};
+\addplot[fill=cHorizonWiseConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cHorizonWiseConformalCoverageUpper and cHorizonWiseConformalCoverageLower];
+\addplot+[cHorizonWiseConformal, semithick, solid, mark=*, mark repeat=4, mark phase=2, mark options={scale=0.60}] coordinates {
+(1,0.866571) (2,0.882286) (3,0.888286) (4,0.883429)
+(5,0.877714) (6,0.867714) (7,0.875429) (8,0.870571)
+(9,0.871714) (10,0.862000) (11,0.859714) (12,0.861429)
+(13,0.865429) (14,0.864857) (15,0.869714) (16,0.867429)
+(17,0.869714) (18,0.871143) (19,0.880000) (20,0.894857)
+};
+\addlegendentry{Horizon-wise, TC=0.710}
+
+\addplot[name path=cMaxScoreSplitConformalCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.992857) (6,0.998571) (7,1.000000) (8,0.998700)
+(9,0.997143) (10,0.997143) (11,0.993429) (12,0.985143)
+(13,0.980962) (14,0.970243) (15,0.957799) (16,0.947886)
+(17,0.939143) (18,0.930058) (19,0.908125) (20,0.906795)
+};
+\addplot[name path=cMaxScoreSplitConformalCoverageLower, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.992857) (6,0.998571) (7,0.998729) (8,0.997300)
+(9,0.997143) (10,0.997143) (11,0.991143) (12,0.984000)
+(13,0.976181) (14,0.958900) (15,0.951916) (16,0.942971)
+(17,0.931143) (18,0.920227) (19,0.897589) (20,0.898919)
+};
+\addplot[fill=cMaxScoreSplitConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cMaxScoreSplitConformalCoverageUpper and cMaxScoreSplitConformalCoverageLower];
+\addplot+[cMaxScoreSplitConformal, semithick, solid, mark=*, mark repeat=4, mark phase=3, mark options={scale=0.60}] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.992857) (6,0.998571) (7,0.999429) (8,0.998000)
+(9,0.997143) (10,0.997143) (11,0.992286) (12,0.984571)
+(13,0.978571) (14,0.964571) (15,0.954857) (16,0.945429)
+(17,0.935143) (18,0.925143) (19,0.902857) (20,0.902857)
+};
+\addlegendentry{Max-score Split, TC=0.882}
+
+\addplot[name path=cResidualQuantileConformalCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,0.999429) (4,0.998000)
+(5,0.984543) (6,0.992893) (7,0.981807) (8,0.973938)
+(9,0.963380) (10,0.959214) (11,0.955338) (12,0.947886)
+(13,0.941814) (14,0.943242) (15,0.943380) (16,0.946857)
+(17,0.951114) (18,0.952475) (19,0.951639) (20,0.960728)
+};
+\addplot[name path=cResidualQuantileConformalCoverageLower, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,0.998286) (4,0.996857)
+(5,0.981743) (6,0.988250) (7,0.978193) (8,0.970062)
+(9,0.960048) (10,0.952215) (11,0.946376) (12,0.942971)
+(13,0.937615) (14,0.939043) (15,0.940048) (16,0.942286)
+(17,0.948315) (18,0.945811) (19,0.939790) (20,0.950129)
+};
+\addplot[fill=cResidualQuantileConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cResidualQuantileConformalCoverageUpper and cResidualQuantileConformalCoverageLower];
+\addplot+[cResidualQuantileConformal, semithick, solid, mark=*, mark repeat=4, mark phase=4, mark options={scale=0.60}] coordinates {
+(1,1.000000) (2,1.000000) (3,0.998857) (4,0.997429)
+(5,0.983143) (6,0.990571) (7,0.980000) (8,0.972000)
+(9,0.961714) (10,0.955714) (11,0.950857) (12,0.945429)
+(13,0.939714) (14,0.941143) (15,0.941714) (16,0.944571)
+(17,0.949714) (18,0.949143) (19,0.945714) (20,0.955429)
+};
+\addlegendentry{Residual Quantile, TC=0.903}
+
+\addplot[name path=cTraceCrcCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,0.995248) (3,0.993903) (4,0.991199)
+(5,0.976996) (6,0.987879) (7,0.988980) (8,0.990286)
+(9,0.987025) (10,0.983725) (11,0.982832) (12,0.979980)
+(13,0.978119) (14,0.975022) (15,0.973833) (16,0.971074)
+(17,0.971311) (18,0.973661) (19,0.970899) (20,0.975513)
+};
+\addplot[name path=cTraceCrcCoverageLower, draw=none, forget plot] coordinates {
+(1,0.998729) (2,0.990467) (3,0.987239) (4,0.985372)
+(5,0.971575) (6,0.981264) (7,0.979591) (8,0.976571)
+(9,0.974689) (10,0.976275) (11,0.973168) (12,0.972020)
+(13,0.970452) (14,0.968407) (15,0.959310) (16,0.955783)
+(17,0.958975) (18,0.962910) (19,0.961101) (20,0.966772)
+};
+\addplot[fill=cTraceCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cTraceCrcCoverageUpper and cTraceCrcCoverageLower];
+\addplot+[cTraceCrc, very thick, solid, mark=diamond*, mark repeat=4, mark phase=3, mark options={scale=0.65}] coordinates {
+(1,0.999429) (2,0.992857) (3,0.990571) (4,0.988286)
+(5,0.974286) (6,0.984571) (7,0.984286) (8,0.983429)
+(9,0.980857) (10,0.980000) (11,0.978000) (12,0.976000)
+(13,0.974286) (14,0.971714) (15,0.966571) (16,0.963429)
+(17,0.965143) (18,0.968286) (19,0.966000) (20,0.971143)
+};
+\addlegendentry{TRACE-CRC, TC=0.933}
+
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=\linewidth,
+height=0.72\linewidth,
+xlabel={Prediction step},
+xmin=1, xmax=20,
+xtick={1,5,10,15,20},
+grid=both,
+grid style={line width=.1pt, draw=gray!20},
+major grid style={line width=.2pt,draw=gray!35},
+tick label style={font=\scriptsize},
+label style={font=\small},
+ylabel={$\mathrm{AFR}_j$},
+ymin=0
+]
+
+\addplot[name path=cGlobalResidualConformalRadiusUpper, draw=none, forget plot] coordinates {
+(1,13.112407) (2,13.112407) (3,13.112407) (4,13.112407)
+(5,13.112407) (6,13.112407) (7,13.112407) (8,13.112407)
+(9,13.112407) (10,13.112407) (11,13.112407) (12,13.112407)
+(13,13.112407) (14,13.112407) (15,13.112407) (16,13.112407)
+(17,13.112407) (18,13.112407) (19,13.112407) (20,13.112407)
+};
+\addplot[name path=cGlobalResidualConformalRadiusLower, draw=none, forget plot] coordinates {
+(1,12.848966) (2,12.848966) (3,12.848966) (4,12.848966)
+(5,12.848966) (6,12.848966) (7,12.848966) (8,12.848966)
+(9,12.848966) (10,12.848966) (11,12.848966) (12,12.848966)
+(13,12.848966) (14,12.848966) (15,12.848966) (16,12.848966)
+(17,12.848966) (18,12.848966) (19,12.848966) (20,12.848966)
+};
+\addplot[fill=cGlobalResidualConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cGlobalResidualConformalRadiusUpper and cGlobalResidualConformalRadiusLower];
+\addplot+[cGlobalResidualConformal, semithick, solid, mark=*, mark repeat=4, mark phase=1, mark options={scale=0.60}] coordinates {
+(1,12.980686) (2,12.980686) (3,12.980686) (4,12.980686)
+(5,12.980686) (6,12.980686) (7,12.980686) (8,12.980686)
+(9,12.980686) (10,12.980686) (11,12.980686) (12,12.980686)
+(13,12.980686) (14,12.980686) (15,12.980686) (16,12.980686)
+(17,12.980686) (18,12.980686) (19,12.980686) (20,12.980686)
+};
+
+\addplot[name path=cHorizonWiseConformalRadiusUpper, draw=none, forget plot] coordinates {
+(1,1.363784) (2,2.043756) (3,3.038258) (4,4.150634)
+(5,5.561116) (6,6.333764) (7,7.712221) (8,8.780117)
+(9,10.028646) (10,10.897986) (11,11.841258) (12,12.864528)
+(13,13.813213) (14,14.573095) (15,15.338153) (16,16.145166)
+(17,16.907617) (18,17.607591) (19,18.907716) (20,19.576178)
+};
+\addplot[name path=cHorizonWiseConformalRadiusLower, draw=none, forget plot] coordinates {
+(1,1.324951) (2,2.015845) (3,2.903535) (4,4.011084)
+(5,5.445554) (6,6.233732) (7,7.462616) (8,8.644847)
+(9,9.800612) (10,10.591534) (11,11.643741) (12,12.564739)
+(13,13.456801) (14,14.222180) (15,15.163169) (16,15.661373)
+(17,16.477649) (18,17.117998) (19,18.322932) (20,18.674571)
+};
+\addplot[fill=cHorizonWiseConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cHorizonWiseConformalRadiusUpper and cHorizonWiseConformalRadiusLower];
+\addplot+[cHorizonWiseConformal, semithick, solid, mark=*, mark repeat=4, mark phase=2, mark options={scale=0.60}] coordinates {
+(1,1.344368) (2,2.029801) (3,2.970897) (4,4.080859)
+(5,5.503335) (6,6.283748) (7,7.587419) (8,8.712482)
+(9,9.914629) (10,10.744760) (11,11.742499) (12,12.714633)
+(13,13.635007) (14,14.397637) (15,15.250661) (16,15.903270)
+(17,16.692633) (18,17.362794) (19,18.615324) (20,19.125375)
+};
+
+\addplot[name path=cMaxScoreSplitConformalRadiusUpper, draw=none, forget plot] coordinates {
+(1,19.781929) (2,19.781929) (3,19.781929) (4,19.781929)
+(5,19.781929) (6,19.781929) (7,19.781929) (8,19.781929)
+(9,19.781929) (10,19.781929) (11,19.781929) (12,19.781929)
+(13,19.781929) (14,19.781929) (15,19.781929) (16,19.781929)
+(17,19.781929) (18,19.781929) (19,19.781929) (20,19.781929)
+};
+\addplot[name path=cMaxScoreSplitConformalRadiusLower, draw=none, forget plot] coordinates {
+(1,19.265105) (2,19.265105) (3,19.265105) (4,19.265105)
+(5,19.265105) (6,19.265105) (7,19.265105) (8,19.265105)
+(9,19.265105) (10,19.265105) (11,19.265105) (12,19.265105)
+(13,19.265105) (14,19.265105) (15,19.265105) (16,19.265105)
+(17,19.265105) (18,19.265105) (19,19.265105) (20,19.265105)
+};
+\addplot[fill=cMaxScoreSplitConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cMaxScoreSplitConformalRadiusUpper and cMaxScoreSplitConformalRadiusLower];
+\addplot+[cMaxScoreSplitConformal, semithick, solid, mark=*, mark repeat=4, mark phase=3, mark options={scale=0.60}] coordinates {
+(1,19.523517) (2,19.523517) (3,19.523517) (4,19.523517)
+(5,19.523517) (6,19.523517) (7,19.523517) (8,19.523517)
+(9,19.523517) (10,19.523517) (11,19.523517) (12,19.523517)
+(13,19.523517) (14,19.523517) (15,19.523517) (16,19.523517)
+(17,19.523517) (18,19.523517) (19,19.523517) (20,19.523517)
+};
+
+\addplot[name path=cResidualQuantileConformalRadiusUpper, draw=none, forget plot] coordinates {
+(1,5.756055) (2,6.673936) (3,7.592698) (4,8.512425)
+(5,9.433203) (6,10.355107) (7,11.278204) (8,12.202546)
+(9,13.128163) (10,14.055064) (11,14.983237) (12,15.912645)
+(13,16.843234) (14,17.774934) (15,18.707668) (16,19.641350)
+(17,20.575896) (18,21.511221) (19,22.447247) (20,23.383899)
+};
+\addplot[name path=cResidualQuantileConformalRadiusLower, draw=none, forget plot] coordinates {
+(1,5.256674) (2,6.191051) (3,7.124547) (4,8.057077)
+(5,8.988558) (6,9.918911) (7,10.848072) (8,11.775988)
+(9,12.702628) (10,13.627984) (11,14.552069) (12,15.474919)
+(13,16.396588) (14,17.317145) (15,18.236669) (16,19.155245)
+(17,20.072957) (18,20.989889) (19,21.906121) (20,22.821727)
+};
+\addplot[fill=cResidualQuantileConformal, fill opacity=0.10, draw=none, forget plot] fill between[of=cResidualQuantileConformalRadiusUpper and cResidualQuantileConformalRadiusLower];
+\addplot+[cResidualQuantileConformal, semithick, solid, mark=*, mark repeat=4, mark phase=4, mark options={scale=0.60}] coordinates {
+(1,5.506365) (2,6.432493) (3,7.358622) (4,8.284751)
+(5,9.210880) (6,10.137009) (7,11.063138) (8,11.989267)
+(9,12.915395) (10,13.841524) (11,14.767653) (12,15.693782)
+(13,16.619911) (14,17.546040) (15,18.472169) (16,19.398298)
+(17,20.324426) (18,21.250555) (19,22.176684) (20,23.102813)
+};
+
+\addplot[name path=cTraceCrcRadiusUpper, draw=none, forget plot] coordinates {
+(1,2.481761) (2,3.110148) (3,4.505856) (4,6.130524)
+(5,7.727192) (6,9.334711) (7,10.793400) (8,12.352973)
+(9,13.671047) (10,14.848521) (11,15.903101) (12,16.814529)
+(13,17.705980) (14,18.543751) (15,19.233458) (16,20.009596)
+(17,20.915324) (18,21.860037) (19,22.797146) (20,23.415319)
+};
+\addplot[name path=cTraceCrcRadiusLower, draw=none, forget plot] coordinates {
+(1,2.282129) (2,2.874806) (3,4.152400) (4,5.574821)
+(5,7.030400) (6,8.495213) (7,9.884819) (8,11.324786)
+(9,12.655474) (10,13.844783) (11,14.797764) (12,15.831193)
+(13,16.856437) (14,17.684597) (15,18.236272) (16,18.653350)
+(17,19.385697) (18,20.564173) (19,21.505627) (20,21.780265)
+};
+\addplot[fill=cTraceCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cTraceCrcRadiusUpper and cTraceCrcRadiusLower];
+\addplot+[cTraceCrc, very thick, solid, mark=diamond*, mark repeat=4, mark phase=3, mark options={scale=0.65}] coordinates {
+(1,2.381945) (2,2.992477) (3,4.329128) (4,5.852672)
+(5,7.378796) (6,8.914962) (7,10.339109) (8,11.838880)
+(9,13.163260) (10,14.346652) (11,15.350433) (12,16.322861)
+(13,17.281208) (14,18.114174) (15,18.734865) (16,19.331473)
+(17,20.150510) (18,21.212105) (19,22.151386) (20,22.597792)
+};
+
+\end{axis}
+\end{tikzpicture}
+\end{minipage}

@@ -1,18 +1,20 @@
 \begin{table}[!htbp]
 \centering
 \scriptsize
-\caption{TRACE-CRC robustness across five diffusion inference seeds and ten fixed random trajectory-level 300/700 splits. Results summarize 50 separately calibrated evaluations.}
-\label{tab:trace-seed-split-robustness}
+\caption{TRACE-CRC robustness under a fixed outer random trajectory-level 300/700 split and repeated random partitions of the same 300 calibration trajectories into $\mathcal{D}_{\mathrm{prof}}$, $\mathcal{D}_{\mathrm{cp}}$, and $\mathcal{D}_{\mathrm{val}}$. Results summarize 50 separately calibrated evaluations from five diffusion inference seeds crossed with ten internal split seeds.}
+\label{tab:trace-internal-split-robustness}
 \begin{tabular}{lccccc}
 \toprule
 Metric & Mean $\pm$ SD & Median & Min & Max \\
 \midrule
-MHC & $0.9893 \pm 0.0041$ & 0.9899 & 0.9786 & 0.9968 \\
-WHC & $0.9745 \pm 0.0102$ & 0.9771 & 0.9443 & 0.9871 \\
-TC & $0.9576 \pm 0.0113$ & 0.9593 & 0.9271 & 0.9771 \\
-AFR & $17.3948 \pm 5.2170$ & 15.6752 & 13.8859 & 42.0247 \\
-Maximum horizon AFR & $29.5149 \pm 9.0257$ & 26.6998 & 22.7393 & 72.8843 \\
-Selected lambda & $1.1820 \pm 0.1462$ & 1.2333 & 0.9000 & 1.5000 \\
+MHC & $0.9809 \pm 0.0062$ & 0.9815 & 0.9644 & 0.9919 \\
+WHC & $0.9686 \pm 0.0081$ & 0.9693 & 0.9471 & 0.9814 \\
+Trajectory coverage & $0.9398 \pm 0.0155$ & 0.9393 & 0.9000 & 0.9686 \\
+Test trajectory risk & $0.0602 \pm 0.0155$ & 0.0607 & 0.0314 & 0.1000 \\
+LTT empirical risk & $0.0429 \pm 0.0053$ & 0.0435 & 0.0304 & 0.0522 \\
+Average Frobenius radius & $14.3956 \pm 0.9753$ & 14.2024 & 12.4033 & 16.8261 \\
+Maximum horizon AFR & $25.2870 \pm 2.4763$ & 24.9892 & 21.1934 & 32.9495 \\
+Selected lambda & $1.1760 \pm 0.1597$ & 1.1667 & 0.8333 & 1.8000 \\
 \midrule
 Formal selection rate & 1.000 & -- & -- & -- \\
 Trajectory target pass rate & 1.000 & -- & -- & -- \\

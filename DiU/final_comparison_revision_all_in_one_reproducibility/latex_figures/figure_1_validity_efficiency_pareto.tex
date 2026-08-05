@@ -1,0 +1,67 @@
+% Auto-generated inference-seed validity-efficiency Pareto figure
+\definecolor{cGlobalResidualConformal}{RGB}{31,119,180}
+\definecolor{cHorizonWiseConformal}{RGB}{255,127,14}
+\definecolor{cMaxScoreSplitConformal}{RGB}{44,160,44}
+\definecolor{cResidualQuantileConformal}{RGB}{214,39,40}
+\definecolor{cEwHorizon}{RGB}{227,119,194}
+\definecolor{cEwTrajectory}{RGB}{23,190,207}
+\definecolor{cEnbpiHorizon}{RGB}{128,128,0}
+\definecolor{cEnbpiTrajectory}{RGB}{85,107,47}
+\definecolor{cAciHorizon}{RGB}{255,0,255}
+\definecolor{cAciTrajectory}{RGB}{238,130,238}
+\definecolor{cAgaciHorizon}{RGB}{255,215,0}
+\definecolor{cAgaciTrajectory}{RGB}{184,134,11}
+\definecolor{cBonferroniHorizonConformal}{RGB}{128,128,128}
+\definecolor{cSidakHorizonConformal}{RGB}{192,192,192}
+\definecolor{cCopulacpts}{RGB}{0,128,128}
+\definecolor{cGlobalCrc}{RGB}{0,0,128}
+\definecolor{cHorizonProfileCrc}{RGB}{255,140,0}
+\definecolor{cTrajectoryStratifiedCrc}{RGB}{0,100,0}
+\definecolor{cTraceCrc}{RGB}{139,0,0}
+\begin{tikzpicture}
+\begin{axis}[conformalAxis, xlabel={Average radius}, ylabel={Sequence coverage}, ymin=0.65, ymax=1.01, xmin=9.670, xmax=27.406, legend pos=south east]
+\addplot[black!50, dashed, domain=9.670:27.406] {0.90};
+\addlegendentry{Target $0.90$}
+\addplot+[only marks, mark=*, mark size=1.8pt, draw=black!45, fill=black!20, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(12.980686,0.642286) +- (0.131721,0.005966) (10.730607,0.710000) +- (0.060847,0.008944) (19.523517,0.882286) +- (0.258412,0.004998) (14.304589,0.902571) +- (0.214405,0.007362) (11.402968,0.735143) +- (0.034168,0.005391) (20.253603,0.891429) +- (0.110210,0.002390) (12.127524,0.790286) +- (0.175737,0.009536) (21.800277,0.919429) +- (0.241833,0.007698) (11.740939,0.732857) +- (0.032160,0.005345) (20.455022,0.897714) +- (0.171407,0.000700) (11.493186,0.743714) +- (0.057179,0.005827) (20.336379,0.894571) +- (0.147057,0.003307) (19.996289,0.968000) +- (0.289602,0.004481) (19.996289,0.968000) +- (0.289602,0.004481) (14.869073,0.891714) +- (0.292694,0.012302) (24.368099,0.957143) +- (0.537974,0.006940) (15.778974,0.944857) +- (0.384926,0.004199) (22.601471,0.949714) +- (0.793511,0.004554) (13.639234,0.932571) +- (0.409818,0.011006)
+};
+\addlegendentry{All methods}
+\addplot+[thick, mark=*, mark size=2.4pt, color=black] coordinates {
+(10.730607,0.710000) (11.402968,0.735143) (11.493186,0.743714) (12.127524,0.790286)
+(13.639234,0.932571) (15.778974,0.944857) (19.996289,0.968000)
+};
+\addlegendentry{Empirical frontier}
+\addplot+[only marks, mark=*, mark size=2.8pt, draw=cGlobalResidualConformal, fill=cGlobalResidualConformal, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(12.980686,0.642286) +- (0.131721,0.005966)
+};
+\node[font=\scriptsize, anchor=west] at (axis cs:13.158050,0.648286) {Global Residual};
+\addplot+[only marks, mark=*, mark size=2.8pt, draw=cHorizonWiseConformal, fill=cHorizonWiseConformal, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(10.730607,0.710000) +- (0.060847,0.008944)
+};
+\node[font=\scriptsize, anchor=west] at (axis cs:10.907970,0.716000) {Horizon-wise};
+\addplot+[only marks, mark=*, mark size=2.8pt, draw=cMaxScoreSplitConformal, fill=cMaxScoreSplitConformal, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(19.523517,0.882286) +- (0.258412,0.004998)
+};
+\node[font=\scriptsize, anchor=west] at (axis cs:19.700880,0.888286) {Max-score Split};
+\addplot+[only marks, mark=*, mark size=2.8pt, draw=cBonferroniHorizonConformal, fill=cBonferroniHorizonConformal, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(19.996289,0.968000) +- (0.289602,0.004481)
+};
+\node[font=\scriptsize, anchor=west] at (axis cs:20.173653,0.974000) {Bonferroni-CRC};
+\addplot+[only marks, mark=*, mark size=2.8pt, draw=cCopulacpts, fill=cCopulacpts, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(14.869073,0.891714) +- (0.292694,0.012302)
+};
+\node[font=\scriptsize, anchor=west] at (axis cs:15.046436,0.897714) {CopulaCPTS};
+\addplot+[only marks, mark=*, mark size=2.8pt, draw=cGlobalCrc, fill=cGlobalCrc, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(24.368099,0.957143) +- (0.537974,0.006940)
+};
+\node[font=\scriptsize, anchor=west] at (axis cs:24.545463,0.963143) {Global-CRC};
+\addplot+[only marks, mark=*, mark size=2.8pt, draw=cHorizonProfileCrc, fill=cHorizonProfileCrc, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(15.778974,0.944857) +- (0.384926,0.004199)
+};
+\node[font=\scriptsize, anchor=west] at (axis cs:15.956337,0.950857) {Horizon-Profile CRC};
+\addplot+[only marks, mark=*, mark size=2.8pt, draw=cTraceCrc, fill=cTraceCrc, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {
+(13.639234,0.932571) +- (0.409818,0.011006)
+};
+\node[font=\scriptsize, anchor=west] at (axis cs:13.816598,0.938571) {TRACE-CRC};
+\end{axis}
+\end{tikzpicture}

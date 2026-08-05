@@ -1,0 +1,14 @@
+% Auto-generated inference-seed sequence-coverage ranking
+\definecolor{cTraceCrc}{RGB}{139,0,0}
+\begin{tikzpicture}
+\begin{axis}[conformalAxis, ybar, bar width=4pt, width=0.98\linewidth, height=0.54\linewidth, xlabel={Method}, ylabel={Sequence coverage}, ymin=0.616, ymax=1.01, xtick=data, xticklabels={Bonferroni-CRC,Sidak-CRC,Global-CRC,Trajectory-Stratified CRC,Horizon-Profile CRC,TRACE-CRC,EnbPI-Trajectory,Residual Quantile,ACI-Trajectory,AgACI-Trajectory,CopulaCPTS,EW-Trajectory,Max-score Split,EnbPI-Horizon,AgACI-Horizon,EW-Horizon,ACI-Horizon,Horizon-wise,Global Residual}, x tick label style={rotate=60, anchor=east, font=\tiny}, enlarge x limits=0.015]
+\addplot+[fill=black!18, draw=black!50, error bars/.cd, y dir=both, y explicit] coordinates {
+(0.000000,0.968000) +- (0.000000,0.004481) (1.000000,0.968000) +- (0.000000,0.004481) (2.000000,0.957143) +- (0.000000,0.006940) (3.000000,0.949714) +- (0.000000,0.004554) (4.000000,0.944857) +- (0.000000,0.004199) (5.000000,0.932571) +- (0.000000,0.011006) (6.000000,0.919429) +- (0.000000,0.007698) (7.000000,0.902571) +- (0.000000,0.007362) (8.000000,0.897714) +- (0.000000,0.000700) (9.000000,0.894571) +- (0.000000,0.003307) (10.000000,0.891714) +- (0.000000,0.012302) (11.000000,0.891429) +- (0.000000,0.002390) (12.000000,0.882286) +- (0.000000,0.004998) (13.000000,0.790286) +- (0.000000,0.009536) (14.000000,0.743714) +- (0.000000,0.005827) (15.000000,0.735143) +- (0.000000,0.005391) (16.000000,0.732857) +- (0.000000,0.005345) (17.000000,0.710000) +- (0.000000,0.008944) (18.000000,0.642286) +- (0.000000,0.005966)
+};
+\addplot+[fill=cTraceCrc!65, draw=cTraceCrc, error bars/.cd, y dir=both, y explicit] coordinates {
+(5.000000,0.932571) +- (0.000000,0.011006)
+};
+\draw[red!70!black, very thick, dashed] (axis cs:-0.5,0.90) -- (axis cs:18.5,0.90);
+\node[font=\scriptsize, anchor=south east, red!70!black] at (axis cs:17.5,0.905) {target $0.90$};
+\end{axis}
+\end{tikzpicture}

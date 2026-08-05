@@ -1,0 +1,255 @@
+% Auto-generated seed-robust coverage and average Frobenius radius figure
+% Requires \usepackage{pgfplots} and \usepgfplotslibrary{fillbetween}
+
+\definecolor{cGlobalCrc}{RGB}{0,0,128}
+\definecolor{cHorizonProfileCrc}{RGB}{255,140,0}
+\definecolor{cTrajectoryStratifiedCrc}{RGB}{0,100,0}
+\definecolor{cTraceCrc}{RGB}{139,0,0}
+
+\centering
+\pgfplotslegendfromname{CombinedLegendCRC}
+\vspace{0.3cm}
+
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=\linewidth,
+height=0.72\linewidth,
+xlabel={Prediction step},
+xmin=1, xmax=20,
+xtick={1,5,10,15,20},
+grid=both,
+grid style={line width=.1pt, draw=gray!20},
+major grid style={line width=.2pt,draw=gray!35},
+tick label style={font=\scriptsize},
+label style={font=\small},
+legend to name=CombinedLegendCRC,
+legend columns=2,
+legend style={
+    font=\scriptsize,
+    draw=none,
+    fill=none,
+    /tikz/every even column/.append style={column sep=0.35cm}
+},
+ylabel={$\mathrm{HC}_j$},
+ymin=0.65,
+ymax=1.01
+]
+
+\addplot[black, dashed, line width=0.6pt, forget plot] coordinates {(1,0.90) (20,0.90)};
+\node[anchor=west, font=\scriptsize] at (axis cs:1.3,0.905) {$1-\alpha=0.90$};
+
+\addplot[name path=cGlobalCrcCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.995666) (6,0.999429) (7,1.000000) (8,1.000000)
+(9,1.000000) (10,1.000000) (11,0.997143) (12,0.997271)
+(13,0.995843) (14,0.994321) (15,0.990571) (16,0.987324)
+(17,0.983779) (18,0.980857) (19,0.974067) (20,0.973811)
+};
+\addplot[name path=cGlobalCrcCoverageLower, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.992334) (6,0.998286) (7,1.000000) (8,1.000000)
+(9,1.000000) (10,1.000000) (11,0.997143) (12,0.995872)
+(13,0.994443) (14,0.989679) (15,0.988286) (16,0.983533)
+(17,0.977364) (18,0.971714) (19,0.963076) (20,0.962760)
+};
+\addplot[fill=cGlobalCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cGlobalCrcCoverageUpper and cGlobalCrcCoverageLower];
+\addplot+[cGlobalCrc, semithick, solid, mark=*, mark repeat=4, mark phase=4, mark options={scale=0.60}] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.994000) (6,0.998857) (7,1.000000) (8,1.000000)
+(9,1.000000) (10,1.000000) (11,0.997143) (12,0.996571)
+(13,0.995143) (14,0.992000) (15,0.989429) (16,0.985429)
+(17,0.980571) (18,0.976286) (19,0.968571) (20,0.968286)
+};
+\addlegendentry{Global-CRC, TC=0.957}
+
+\addplot[name path=cHorizonProfileCrcCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,0.997143) (3,0.997069) (4,0.995843)
+(5,0.982028) (6,0.993236) (7,0.992933) (8,0.992916)
+(9,0.990302) (10,0.989871) (11,0.988668) (12,0.985689)
+(13,0.984085) (14,0.981813) (15,0.977543) (16,0.975227)
+(17,0.976898) (18,0.981568) (19,0.983990) (20,0.986802)
+};
+\addplot[name path=cHorizonProfileCrcCoverageLower, draw=none, forget plot] coordinates {
+(1,1.000000) (2,0.997143) (3,0.994931) (4,0.994443)
+(5,0.979115) (6,0.989622) (7,0.985352) (8,0.983084)
+(9,0.979984) (10,0.979272) (11,0.977617) (12,0.976025)
+(13,0.975344) (14,0.970187) (15,0.971028) (16,0.969344)
+(17,0.968817) (18,0.975575) (19,0.975438) (20,0.979484)
+};
+\addplot[fill=cHorizonProfileCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cHorizonProfileCrcCoverageUpper and cHorizonProfileCrcCoverageLower];
+\addplot+[cHorizonProfileCrc, semithick, solid, mark=*, mark repeat=4, mark phase=1, mark options={scale=0.60}] coordinates {
+(1,1.000000) (2,0.997143) (3,0.996000) (4,0.995143)
+(5,0.980571) (6,0.991429) (7,0.989143) (8,0.988000)
+(9,0.985143) (10,0.984571) (11,0.983143) (12,0.980857)
+(13,0.979714) (14,0.976000) (15,0.974286) (16,0.972286)
+(17,0.972857) (18,0.978571) (19,0.979714) (20,0.983143)
+};
+\addlegendentry{Horizon-Profile CRC, TC=0.945}
+
+\addplot[name path=cTrajectoryStratifiedCrcCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,1.000000) (6,1.000000) (7,1.000000) (8,1.000000)
+(9,0.999355) (10,0.999528) (11,0.997281) (12,0.996100)
+(13,0.994138) (14,0.991315) (15,0.987283) (16,0.979769)
+(17,0.976696) (18,0.971660) (19,0.963694) (20,0.957622)
+};
+\addplot[name path=cTrajectoryStratifiedCrcCoverageLower, draw=none, forget plot] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.996358) (6,0.999143) (7,0.998729) (8,0.998729)
+(9,0.997217) (10,0.995329) (11,0.993005) (12,0.991900)
+(13,0.989862) (14,0.986399) (15,0.978431) (16,0.972231)
+(17,0.966733) (18,0.962625) (19,0.955735) (20,0.951521)
+};
+\addplot[fill=cTrajectoryStratifiedCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cTrajectoryStratifiedCrcCoverageUpper and cTrajectoryStratifiedCrcCoverageLower];
+\addplot+[cTrajectoryStratifiedCrc, semithick, solid, mark=*, mark repeat=4, mark phase=2, mark options={scale=0.60}] coordinates {
+(1,1.000000) (2,1.000000) (3,1.000000) (4,1.000000)
+(5,0.998571) (6,0.999714) (7,0.999429) (8,0.999429)
+(9,0.998286) (10,0.997429) (11,0.995143) (12,0.994000)
+(13,0.992000) (14,0.988857) (15,0.982857) (16,0.976000)
+(17,0.971714) (18,0.967143) (19,0.959714) (20,0.954571)
+};
+\addlegendentry{Trajectory-Stratified CRC, TC=0.950}
+
+\addplot[name path=cTraceCrcCoverageUpper, draw=none, forget plot] coordinates {
+(1,1.000000) (2,0.995248) (3,0.993903) (4,0.991199)
+(5,0.976996) (6,0.987879) (7,0.988980) (8,0.990286)
+(9,0.987025) (10,0.983725) (11,0.982832) (12,0.979980)
+(13,0.978119) (14,0.975022) (15,0.973833) (16,0.971074)
+(17,0.971311) (18,0.973661) (19,0.970899) (20,0.975513)
+};
+\addplot[name path=cTraceCrcCoverageLower, draw=none, forget plot] coordinates {
+(1,0.998729) (2,0.990467) (3,0.987239) (4,0.985372)
+(5,0.971575) (6,0.981264) (7,0.979591) (8,0.976571)
+(9,0.974689) (10,0.976275) (11,0.973168) (12,0.972020)
+(13,0.970452) (14,0.968407) (15,0.959310) (16,0.955783)
+(17,0.958975) (18,0.962910) (19,0.961101) (20,0.966772)
+};
+\addplot[fill=cTraceCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cTraceCrcCoverageUpper and cTraceCrcCoverageLower];
+\addplot+[cTraceCrc, very thick, solid, mark=diamond*, mark repeat=4, mark phase=3, mark options={scale=0.65}] coordinates {
+(1,0.999429) (2,0.992857) (3,0.990571) (4,0.988286)
+(5,0.974286) (6,0.984571) (7,0.984286) (8,0.983429)
+(9,0.980857) (10,0.980000) (11,0.978000) (12,0.976000)
+(13,0.974286) (14,0.971714) (15,0.966571) (16,0.963429)
+(17,0.965143) (18,0.968286) (19,0.966000) (20,0.971143)
+};
+\addlegendentry{TRACE-CRC, TC=0.933}
+
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=\linewidth,
+height=0.72\linewidth,
+xlabel={Prediction step},
+xmin=1, xmax=20,
+xtick={1,5,10,15,20},
+grid=both,
+grid style={line width=.1pt, draw=gray!20},
+major grid style={line width=.2pt,draw=gray!35},
+tick label style={font=\scriptsize},
+label style={font=\small},
+ylabel={$\mathrm{AFR}_j$},
+ymin=0
+]
+
+\addplot[name path=cGlobalCrcRadiusUpper, draw=none, forget plot] coordinates {
+(1,24.906073) (2,24.906073) (3,24.906073) (4,24.906073)
+(5,24.906073) (6,24.906073) (7,24.906073) (8,24.906073)
+(9,24.906073) (10,24.906073) (11,24.906073) (12,24.906073)
+(13,24.906073) (14,24.906073) (15,24.906073) (16,24.906073)
+(17,24.906073) (18,24.906073) (19,24.906073) (20,24.906073)
+};
+\addplot[name path=cGlobalCrcRadiusLower, draw=none, forget plot] coordinates {
+(1,23.830126) (2,23.830126) (3,23.830126) (4,23.830126)
+(5,23.830126) (6,23.830126) (7,23.830126) (8,23.830126)
+(9,23.830126) (10,23.830126) (11,23.830126) (12,23.830126)
+(13,23.830126) (14,23.830126) (15,23.830126) (16,23.830126)
+(17,23.830126) (18,23.830126) (19,23.830126) (20,23.830126)
+};
+\addplot[fill=cGlobalCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cGlobalCrcRadiusUpper and cGlobalCrcRadiusLower];
+\addplot+[cGlobalCrc, semithick, solid, mark=*, mark repeat=4, mark phase=4, mark options={scale=0.60}] coordinates {
+(1,24.368099) (2,24.368099) (3,24.368099) (4,24.368099)
+(5,24.368099) (6,24.368099) (7,24.368099) (8,24.368099)
+(9,24.368099) (10,24.368099) (11,24.368099) (12,24.368099)
+(13,24.368099) (14,24.368099) (15,24.368099) (16,24.368099)
+(17,24.368099) (18,24.368099) (19,24.368099) (20,24.368099)
+};
+
+\addplot[name path=cHorizonProfileCrcRadiusUpper, draw=none, forget plot] coordinates {
+(1,2.801656) (2,3.512199) (3,5.095334) (4,6.864874)
+(5,8.641037) (6,10.530017) (7,12.359342) (8,14.294536)
+(9,15.810383) (10,17.191735) (11,18.392751) (12,19.523971)
+(13,20.680388) (14,21.623670) (15,22.220275) (16,22.865447)
+(17,23.949851) (18,25.167936) (19,26.320977) (20,27.019263)
+};
+\addplot[name path=cHorizonProfileCrcRadiusLower, draw=none, forget plot] coordinates {
+(1,2.706402) (2,3.408151) (3,4.915981) (4,6.665057)
+(5,8.417007) (6,10.082591) (7,11.557410) (8,13.102423)
+(9,14.650765) (10,16.009235) (11,17.129468) (12,18.253587)
+(13,19.321816) (14,20.303942) (15,21.132742) (16,21.853842)
+(17,22.665248) (18,23.912766) (19,24.936532) (20,25.268352)
+};
+\addplot[fill=cHorizonProfileCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cHorizonProfileCrcRadiusUpper and cHorizonProfileCrcRadiusLower];
+\addplot+[cHorizonProfileCrc, semithick, solid, mark=*, mark repeat=4, mark phase=1, mark options={scale=0.60}] coordinates {
+(1,2.754029) (2,3.460175) (3,5.005657) (4,6.764965)
+(5,8.529022) (6,10.306304) (7,11.958376) (8,13.698479)
+(9,15.230574) (10,16.600485) (11,17.761110) (12,18.888779)
+(13,20.001102) (14,20.963806) (15,21.676509) (16,22.359645)
+(17,23.307550) (18,24.540351) (19,25.628754) (20,26.143807)
+};
+
+\addplot[name path=cTrajectoryStratifiedCrcRadiusUpper, draw=none, forget plot] coordinates {
+(1,23.394982) (2,23.394982) (3,23.394982) (4,23.394982)
+(5,23.394982) (6,23.394982) (7,23.394982) (8,23.394982)
+(9,23.394982) (10,23.394982) (11,23.394982) (12,23.394982)
+(13,23.394982) (14,23.394982) (15,23.394982) (16,23.394982)
+(17,23.394982) (18,23.394982) (19,23.394982) (20,23.394982)
+};
+\addplot[name path=cTrajectoryStratifiedCrcRadiusLower, draw=none, forget plot] coordinates {
+(1,21.807961) (2,21.807961) (3,21.807961) (4,21.807961)
+(5,21.807961) (6,21.807961) (7,21.807961) (8,21.807961)
+(9,21.807961) (10,21.807961) (11,21.807961) (12,21.807961)
+(13,21.807961) (14,21.807961) (15,21.807961) (16,21.807961)
+(17,21.807961) (18,21.807961) (19,21.807961) (20,21.807961)
+};
+\addplot[fill=cTrajectoryStratifiedCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cTrajectoryStratifiedCrcRadiusUpper and cTrajectoryStratifiedCrcRadiusLower];
+\addplot+[cTrajectoryStratifiedCrc, semithick, solid, mark=*, mark repeat=4, mark phase=2, mark options={scale=0.60}] coordinates {
+(1,22.601471) (2,22.601471) (3,22.601471) (4,22.601471)
+(5,22.601471) (6,22.601471) (7,22.601471) (8,22.601471)
+(9,22.601471) (10,22.601471) (11,22.601471) (12,22.601471)
+(13,22.601471) (14,22.601471) (15,22.601471) (16,22.601471)
+(17,22.601471) (18,22.601471) (19,22.601471) (20,22.601471)
+};
+
+\addplot[name path=cTraceCrcRadiusUpper, draw=none, forget plot] coordinates {
+(1,2.481761) (2,3.110148) (3,4.505856) (4,6.130524)
+(5,7.727192) (6,9.334711) (7,10.793400) (8,12.352973)
+(9,13.671047) (10,14.848521) (11,15.903101) (12,16.814529)
+(13,17.705980) (14,18.543751) (15,19.233458) (16,20.009596)
+(17,20.915324) (18,21.860037) (19,22.797146) (20,23.415319)
+};
+\addplot[name path=cTraceCrcRadiusLower, draw=none, forget plot] coordinates {
+(1,2.282129) (2,2.874806) (3,4.152400) (4,5.574821)
+(5,7.030400) (6,8.495213) (7,9.884819) (8,11.324786)
+(9,12.655474) (10,13.844783) (11,14.797764) (12,15.831193)
+(13,16.856437) (14,17.684597) (15,18.236272) (16,18.653350)
+(17,19.385697) (18,20.564173) (19,21.505627) (20,21.780265)
+};
+\addplot[fill=cTraceCrc, fill opacity=0.10, draw=none, forget plot] fill between[of=cTraceCrcRadiusUpper and cTraceCrcRadiusLower];
+\addplot+[cTraceCrc, very thick, solid, mark=diamond*, mark repeat=4, mark phase=3, mark options={scale=0.65}] coordinates {
+(1,2.381945) (2,2.992477) (3,4.329128) (4,5.852672)
+(5,7.378796) (6,8.914962) (7,10.339109) (8,11.838880)
+(9,13.163260) (10,14.346652) (11,15.350433) (12,16.322861)
+(13,17.281208) (14,18.114174) (15,18.734865) (16,19.331473)
+(17,20.150510) (18,21.212105) (19,22.151386) (20,22.597792)
+};
+
+\end{axis}
+\end{tikzpicture}
+\end{minipage}

@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\centering
+\scriptsize
+\caption{TRACE-CRC sensitivity decomposition under fixed outer 300/700 calibration/test membership. Continuous metrics are reported as mean $\pm$ standard deviation across all 50 evaluations; formal-selection and target-pass entries are rates. Inference-seed SD is computed across five marginal means, each averaged over ten internal splits; internal-split SD is computed across ten marginal means, each averaged over five inference seeds.}
+\label{tab:trace-internal-factor-sensitivity}
+\begin{tabular}{lccc}
+\toprule
+Metric & Overall mean $\pm$ SD & Inference-seed SD & Internal-split SD \\
+\midrule
+MHC & $0.9809 \pm 0.0062$ & 0.0021 & 0.0051 \\
+WHC & $0.9686 \pm 0.0081$ & 0.0025 & 0.0063 \\
+Trajectory coverage & $0.9398 \pm 0.0155$ & 0.0058 & 0.0109 \\
+Test trajectory risk & $0.0602 \pm 0.0155$ & 0.0058 & 0.0109 \\
+LTT empirical risk & $0.0429 \pm 0.0053$ & 0.0022 & 0.0019 \\
+Average Frobenius radius & $14.3956 \pm 0.9753$ & 0.3114 & 0.6691 \\
+Maximum horizon AFR & $25.2870 \pm 2.4763$ & 0.6486 & 2.0181 \\
+Selected lambda & $1.1760 \pm 0.1597$ & 0.0281 & 0.1337 \\
+Formal selection rate & 1.0000 & 0.0000 & 0.0000 \\
+Trajectory target pass rate & 1.0000 & 0.0000 & 0.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}

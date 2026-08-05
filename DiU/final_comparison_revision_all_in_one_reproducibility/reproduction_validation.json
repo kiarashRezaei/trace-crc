@@ -1,39 +1,11 @@
 {
-  "validation_type": "standalone_artifact",
-  "all_checks_passed": true,
-  "checks": {
-    "method_seed_run_count": true,
-    "trace_split_run_count": true,
-    "primary_calibration_size": true,
-    "primary_test_size": true,
-    "calibration_test_disjoint": true,
-    "all_crc_selections_formal": true,
-    "no_crc_empirical_fallback": true,
-    "all_trace_robustness_selections_formal": true,
-    "test_data_excluded_from_tuning": true
-  },
-  "expected_method_seed_runs": 95,
-  "observed_method_seed_runs": 95,
-  "expected_trace_split_runs": 50,
-  "observed_trace_split_runs": 50,
-  "inference_seeds": [
-    20260724,
-    20260824,
-    20260924,
-    20261024,
-    20261124
-  ],
-  "split_seeds": [
-    1101,
-    1102,
-    1103,
-    1104,
-    1105,
-    1106,
-    1107,
-    1108,
-    1109,
-    1110
-  ],
-  "empirical_fallback_allowed": false
+  "new_artifact": "/Users/kiarashr/Projects/cp-csi/DiU/final_comparison_revision_all_in_one_reproducibility",
+  "check_type": "fixed_outer_internal_split_robustness",
+  "outer_calibration_membership_fixed": true,
+  "outer_test_membership_fixed": true,
+  "internal_partitions_distinct": true,
+  "run_count_expected": 50,
+  "run_count_observed": 50,
+  "all_formal": true,
+  "all_target_passing": true
 }
