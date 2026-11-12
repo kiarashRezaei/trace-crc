@@ -53,5 +53,24 @@ preferred-citation:
       given-names: Paolo
     - family-names: Natalino
       given-names: Carlos
-  collection-title: "Conformal and Probabilistic Prediction with Applications (COPA 2026)"
+  collection-title: "Proceedings of the Fifteenth Symposium on Conformal and Probabilistic Prediction with Applications"
+  editors:
+    - family-names: Ahlberg
+      given-names: Ernst
+    - family-names: Johansson
+      given-names: Ulf
+    - family-names: Boström
+      given-names: Henrik
+    - family-names: Carlevaro
+      given-names: Alberto
+    - family-names: Hallberg Szabadváry
+      given-names: Johan
+    - family-names: Carlsson
+      given-names: Lars
+  publisher:
+    name: PMLR
+  volume: 329
+  start: 984
+  end: 1009
   year: 2026
+  url: "https://proceedings.mlr.press/v329/rezaei26a.html"
