@@ -3,7 +3,7 @@
 **Trajectory-Adaptive Conformal Risk Control for Multi-Step Channel State
 Information Prediction**
 
-Official implementation and reproducibility artifact for the COPA 2026 paper.
+Official implementation and reproducibility artifact for the [COPA 2026 paper](https://proceedings.mlr.press/v329/rezaei26a.html).
 
 TRACE-CRC wraps a pretrained multi-step channel state information (CSI)
 predictor with trajectory-aware uncertainty sets. It combines:
@@ -230,9 +230,17 @@ If you use this implementation, cite:
                for Multi-Step Channel State Information Prediction},
   author    = {Rezaei, Kiarash and Sattari, Mehdi and Aliakbari, Javad
                and Svensson, Tommy and Monti, Paolo and Natalino, Carlos},
-  booktitle = {Conformal and Probabilistic Prediction with Applications
-               (COPA 2026)},
-  year      = {2026}
+  booktitle = {Proceedings of the Fifteenth Symposium on Conformal and
+               Probabilistic Prediction with Applications},
+  editor    = {Ahlberg, Ernst and Johansson, Ulf and Bostr{\"o}m, Henrik
+               and Carlevaro, Alberto and Hallberg Szabadv{\'a}ry, Johan
+               and Carlsson, Lars},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {329},
+  pages     = {984--1009},
+  year      = {2026},
+  publisher = {PMLR},
+  url       = {https://proceedings.mlr.press/v329/rezaei26a.html}
 }
 ```
 
